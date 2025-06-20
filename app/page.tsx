@@ -2,6 +2,7 @@
 
 import { navItems } from "@/data";
 export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";

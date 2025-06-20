@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import { Player } from "@lottiefiles/react-lottie-player";
 import dynamic from "next/dynamic";
@@ -65,6 +65,12 @@ export const BentoGridItem = ({
     playerRef.current?.play(); // Play confetti animation
   };
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div
       className={cn(
@@ -102,7 +108,7 @@ export const BentoGridItem = ({
           )}
         </div>
 
-        {id === 6 && (
+        {id === 6 && mounted && (
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl" />
           </BackgroundGradientAnimation>
