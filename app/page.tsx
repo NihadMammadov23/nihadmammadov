@@ -1,4 +1,7 @@
 "use client";
+
+import { navItems } from "@/data";
+
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";
@@ -8,15 +11,6 @@ import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 
 import GoToTopButton from "@/components/ui/GoToTopButton"; // import the button
-
-// Define your navigation items here
-const navItems = [
-  { name: "Home", link: "/" },
-  { name: "Projects", link: "#projects" },
-  { name: "Experience", link: "#experience" },
-  { name: "Approach", link: "#approach" },
-  { name: "Contact", link: "#contact" },
-];
 
 const Home = () => {
   return (
