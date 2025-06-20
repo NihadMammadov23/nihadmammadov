@@ -3,10 +3,12 @@
 import { useState, useRef } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import { Player } from "@lottiefiles/react-lottie-player";
-
+import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
-import GridGlobe from "./GridGlobe";
+const GridGlobe = dynamic(() => import("@/components/ui/GridGlobe"), {
+  ssr: false,
+});
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
 
