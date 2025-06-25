@@ -1,14 +1,23 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { navItems } from "@/data";
 
-import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-import Footer from "@/components/Footer";
-import Approach from "@/components/Approach";
-import Experience from "@/components/Experience";
-import RecentProjects from "@/components/RecentProjects";
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
+// Dynamically import all components with SSR disabled
+const Hero = dynamic(() => import("@/components/Hero"), { ssr: false });
+const Grid = dynamic(() => import("@/components/Grid"), { ssr: false });
+const RecentProjects = dynamic(() => import("@/components/RecentProjects"), {
+  ssr: false,
+});
+const Experience = dynamic(() => import("@/components/Experience"), {
+  ssr: false,
+});
+const Approach = dynamic(() => import("@/components/Approach"), { ssr: false });
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
+const FloatingNav = dynamic(
+  () => import("@/components/ui/FloatingNavbar").then((mod) => mod.FloatingNav),
+  { ssr: false }
+);
 
 const Home = () => {
   return (
