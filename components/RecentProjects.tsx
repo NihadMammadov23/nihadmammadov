@@ -32,7 +32,7 @@ const RecentProjects = () => {
                     alt="bgimg"
                     fill
                     style={{ objectFit: "cover" }}
-                    sizes="100vw"
+                    sizes="(max-width: 1024px) 100vw, 100%"
                     priority
                   />
                 </div>

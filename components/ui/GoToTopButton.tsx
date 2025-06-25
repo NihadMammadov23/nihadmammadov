@@ -7,22 +7,15 @@ const GoToTopButton = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window !== "undefined") {
-        setVisible(window.scrollY > 200);
-      }
+      setVisible(window.scrollY > 200);
     };
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const reloadPageToTop = () => {
-    // Reload the whole page (this will reset scroll to top)
-    if (typeof window !== "undefined") {
-      window.location.href = window.location.pathname;
-    }
-    // or use window.location.reload(); but this reloads current URL with hash
+    window.location.href = window.location.pathname;
   };
 
   if (!visible) return null;
