@@ -5,10 +5,6 @@ import { IoCopyOutline } from "react-icons/io5";
 import { Player } from "@lottiefiles/react-lottie-player";
 import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
-const BackgroundGradientAnimation = dynamic(
-  () => import("./GradientBg").then((mod) => mod.BackgroundGradientAnimation),
-  { ssr: false }
-);
 const GridGlobe = dynamic(() => import("@/components/ui/GridGlobe"), {
   ssr: false,
 });
@@ -110,10 +106,7 @@ export const BentoGridItem = ({
         </div>
 
         {id === 6 && mounted && (
-          <>
-            <BackgroundGradientAnimation />
-            <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl" />
-          </>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#161A31] to-[#10132E] opacity-50"></div>
         )}
 
         <div
