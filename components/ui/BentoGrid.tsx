@@ -5,9 +5,8 @@ import { IoCopyOutline } from "react-icons/io5";
 import { Player } from "@lottiefiles/react-lottie-player";
 import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
-const BackgroundGradientAnimation = dynamic(() => import("./GradientBg"), {
-  ssr: false,
-});
+import { BackgroundGradientAnimation } from "./GradientBg";
+
 const GridGlobe = dynamic(() => import("@/components/ui/GridGlobe"), {
   ssr: false,
 });
